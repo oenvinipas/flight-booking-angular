@@ -8,6 +8,7 @@ import { AirportComponent } from './pages/admin/airport/airport.component';
 import { AllFlightsComponent } from './pages/admin/all-flights/all-flights.component';
 import { NewFlightComponent } from './pages/admin/new-flight/new-flight.component';
 import { LoginComponent } from './pages/admin/login/login.component';
+import { CityComponent } from './pages/admin/city/city.component';
 
 const routes: Routes = [
 
@@ -45,6 +46,10 @@ const routes: Routes = [
       {
         path: "airport",
         component: AirportComponent
+      },
+      {
+        path: "city",
+        component: CityComponent
       },
       {
         path: "all-flights",
