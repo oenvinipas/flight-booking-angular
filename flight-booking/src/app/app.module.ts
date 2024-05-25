@@ -13,7 +13,7 @@ import { NewFlightComponent } from './pages/admin/new-flight/new-flight.componen
 import { SearchComponent } from './pages/website/search/search.component';
 import { BookFlightComponent } from './pages/website/book-flight/book-flight.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 import { MyBookingsComponent } from './pages/website/my-bookings/my-bookings.component';
 
 @NgModule({
@@ -38,7 +38,7 @@ import { MyBookingsComponent } from './pages/website/my-bookings/my-bookings.com
   ],
   providers: [
     provideClientHydration(),
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
   ],
   bootstrap: [AppComponent]
 })

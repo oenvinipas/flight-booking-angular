@@ -79,7 +79,8 @@
               "buildTarget": "flight-booking:build:production"
             },
             "development": {
-              "buildTarget": "flight-booking:build:development"
+              "buildTarget": "flight-booking:build:development",
+              "proxyConfig": "./proxy_config/dev.proxy.config.json"
             }
           },
           "defaultConfiguration": "development"
