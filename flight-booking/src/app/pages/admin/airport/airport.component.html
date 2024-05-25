@@ -1,1 +1,44 @@
-<p>airport works!</p>
+<div class="row">
+    <div class="col-12 text-end">
+        <button class="btn btn-success" (click)="addNew()">
+            Add New
+        </button>
+        <button class="btn btn-success" (click)="bulkUpdateAirport()">
+            Bulk Update
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>Airport Code</th>
+                    <th>Airport Name</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="
+                    let airport of airportList
+                    let sr = index
+                    ">
+                    <td>
+                        {{sr + 1}}
+                    </td>
+                    <td>
+                        <input type="text" [(ngModel)]="airport.airportCode" placeholder="Enter Airport Code" />
+                    </td>
+                    <td>
+                        <input type="text" [(ngModel)]="airport.airportName" placeholder="Enter Airport Name" />
+                    </td>
+                    <td>
+                        <input type="text" [(ngModel)]="airport.cityName" placeholder="Enter City Name" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
