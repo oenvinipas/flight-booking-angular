@@ -2,6 +2,9 @@
     "/api": {
         "target": "https://freeapi.gerasim.in/api/FlightBooking",
         "secured": true,
-        "changeOrigin": true
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/api": ""
+        }
     }
 }
