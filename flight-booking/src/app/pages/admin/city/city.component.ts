@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../../../api.service';
 
 @Component({
   selector: 'app-city',
@@ -7,9 +8,8 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './city.component.css'
 })
 export class CityComponent implements OnInit {
-  apiKey: string = "https://freeapi.gerasim.in/api/FlightBooking";
   cityList: any [] = [];
-  constructor(private http: HttpClient) {}
+  constructor(private apiService: ApiService) {}
 
   // On page load, cityList should be populated with cities
   ngOnInit(): void {
@@ -17,20 +17,20 @@ export class CityComponent implements OnInit {
   }
 
   getAlLCity() {
-    this.http.get(`${this.apiKey}/GetAllCity`).subscribe((res: any) => {
+    this.apiService.getData("GetAllCity").subscribe((res: any) => {
       this.cityList = res.data;
     })
   }
 
-  // bulkUpdateCity() {
-  //   this.http.post("https://freeapi.gerasim.in/api/FlightBooking/AddUpdateBulkCity", this.cityList).subscribe((res: any) => {
-  //     if (res.result) {
-  //       alert("Bulk Update Success")
-  //     } else {
-  //       alert(res.message)
-  //     }
-  //   })
-  // }
+  bulkUpdateCity() {
+    this.apiService.postData("AddUpdateBulkCity", this.cityList).subscribe((res: any) => {
+      if (res.result) {
+        alert("Bulk Update Success")
+      } else {
+        alert(res.message)
+      }
+    })
+  }
 
   addNew() {
     const obj = {
