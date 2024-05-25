@@ -73,14 +73,17 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": {
+            "proxyConfig": "./src/proxy.conf.json"
+          },
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
               "buildTarget": "flight-booking:build:production"
             },
+            
             "development": {
-              "buildTarget": "flight-booking:build:development",
-              "proxyConfig": "./proxy_config/dev.proxy.config.json"
+              "buildTarget": "flight-booking:build:development"
             }
           },
           "defaultConfiguration": "development"
