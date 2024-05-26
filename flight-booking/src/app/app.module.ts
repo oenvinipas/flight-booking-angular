@@ -15,6 +15,7 @@ import { BookFlightComponent } from './pages/website/book-flight/book-flight.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { MyBookingsComponent } from './pages/website/my-bookings/my-bookings.component';
+import { NavbarComponent } from './pages/admin/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MyBookingsComponent } from './pages/website/my-bookings/my-bookings.com
     NewFlightComponent,
     SearchComponent,
     BookFlightComponent,
-    MyBookingsComponent
+    MyBookingsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
